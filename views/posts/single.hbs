@@ -1,0 +1,38 @@
+<div class="post-list">
+<div class="post">
+    <div class="post-creator">
+      <img src="{{post.creatorId.profilePic}}" alt="">
+      <h4> {{ post.creatorId.name }}</h4>
+    </div>
+  <div class="post-image">
+    <img src="{{ post.pictureUrl }}" alt="">
+      <h2>{{ post.pictureName }}</h2>
+  </div>
+  <h4> <strong>{{ post.creatorId.name }} :</strong> {{ post.content }}</h4>
+  <hr>
+  <div class="add-comment">
+    <form action="/post/{{ post._id }}/comment/create" method="POST" enctype="multipart/form-data">
+      <textarea name="content" id="message-input" rows="4" maxlength="500" placeholder="Add a comment..." class="textarea"></textarea>
+      <div class="comment-picture-container">
+        <label for="picture-input">Picture</label>
+        <input id="picture-input" name="picture" type="file">
+        <input id="picture-name-input" name="pictureName" type="text" placeholder="Picture Name">
+      </div>
+      <button>Post comment</button>
+    </form>
+  </div>
+  <div class="list-comments">
+    <hr>
+    <h4>Comments</h4>
+    {{#each post.comments}}
+    <div class="comment">
+      <h3>{{ pictureName }}</h3>
+      <img src="{{ pictureUrl }}" alt="">
+  <h4> <strong>{{ creatorId.name }} - </strong> {{ content }}</h4>
+  <hr>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+</div>

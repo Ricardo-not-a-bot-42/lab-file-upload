@@ -1,1 +1,22 @@
-<h1>This page should only be accessible to authenticated users</h1>
+
+<div class="profile-header">
+  <div class="basic-info">
+    <img src="{{ user.profilePic }}" alt="">
+    <h4>{{ user.name }}</h4>
+    <h1>Posts</h1>
+  </div>
+</div>
+<div class="profile-content">
+
+  <div class="user-posts">
+    {{#each posts}}
+    <div class="user-post">
+      <a href="/post/view/{{ _id }}">
+        <img src="{{ pictureUrl }}" alt="">
+      </a>
+
+    </div>
+    {{/each}}
+  </div>
+ 
+</div>

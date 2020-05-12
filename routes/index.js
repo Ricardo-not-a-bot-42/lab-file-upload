@@ -5,7 +5,11 @@ const router = new Router();
 
 router.get('/', (req, res, next) => {
   console.log(req.user);
-  res.render('index', { title: 'Hello World!' });
+  if (req.user) {
+    res.redirect('/post/list');
+  } else {
+    res.render('index', { title: 'Hello World!' });
+  }
 });
 
 router.get('/private', (req, res, next) => {

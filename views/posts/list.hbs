@@ -1,0 +1,16 @@
+<div class="post-list">
+<h1>Posts</h1>
+{{#each posts}}
+<div class="post">
+  <div class="post-creator">
+    <img src="{{creatorId.profilePic}}" alt="">
+    <h4> {{ creatorId.name }}</h4>
+  </div>
+  <a href="/post/view/{{ _id }}">
+    <img src="{{ pictureUrl }}" alt="">
+    <h2>{{ pictureName }}</h2>
+  </a>
+  <h4> {{ content }}</h4>
+</div>
+{{/each}}
+</div>

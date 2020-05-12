@@ -9,18 +9,21 @@
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
-      {{!-- Display relevant routes for non-authenticated vs. authenticated user --}}
-      {{#if user}}
-        <a href="/">{{user.name}}'s Profile</a>
-        <form action="/sign-out" method="POST">
-          <button>Sign Out</button>
-        </form>
-        {{else}}
-        <a href="/sign-in">Sign In</a>
-        <a href="/sign-up">Sign Up</a>
-      {{/if}}
+      <h3><a href="/">Instagram Lab</a></h3>
     </nav>
     {{{body}}}
+
+    {{#if user}}
+      <footer>
+        <div class="footer-container">
+          <a href="/">Home</a>
+          <a href="/post/create">New Post</a>
+          <a href="/profile">Profile</a>
+          <form action="/sign-out" method="POST">
+            <button>Sign Out</button>
+          </form>
+        </div>
+      </footer>
+    {{/if}}
   </body>
 </html>
